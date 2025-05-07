@@ -23,8 +23,8 @@ Bu loyiha PHP, NGINX va MariaDB (MySQL) asosida Docker konteynerlari yordamida i
 1. Loyihani klon qiling:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/KojanovDEV/iw4.git
+cd iw4
 ```
 
 2. `app/` papkasini yarating va `index.php` faylni shu yerga joylashtiring:
