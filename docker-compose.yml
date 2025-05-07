@@ -1,0 +1,27 @@
+services:
+    php:
+        build: ./php
+        volumes:
+            - ./app:/var/www/html
+        depends_on:
+            - mysql
+
+    nginx:
+        build: ./nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - ./app:/var/www/html
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - php
+
+    mysql:
+        image: mariadb:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpass
+            MYSQL_DATABASE: testdb
+            MYSQL_USER: testuser
+            MYSQL_PASSWORD: testpass
+        ports:
+            - "3307:3306"
